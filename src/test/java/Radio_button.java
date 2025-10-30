@@ -14,6 +14,10 @@ public class Radio_button {
         driver.manage().window().maximize();
         driver.get("https://www.lambdatest.com/selenium-playground/");
     }
+    @BeforeMethod
+    public void treadown(){
+        driver.quit();
+    }
     @Test
     public void checkBox(){
         driver.findElement(By.linkText("Checkbox Demo")).click();
