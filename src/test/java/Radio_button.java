@@ -22,11 +22,23 @@ public class Radio_button {
     public void checkBox(){
         driver.findElement(By.linkText("Checkbox Demo")).click();
         String Actualmsg;
-        driver.findElement(By.xpath(//input[text()="Click on check box"])).click();
+        driver.findElement(By.xpath("//input[text()='Click on check box']")).click();
                 //driver.findElement(By.xpath("//p[@label="color: green; margin-top: 10px;"]")).getText();
           Actualmsg =  driver.findElement(By.name("checked!")).getText();
         Assert.assertTrue(Actualmsg.contains("checked!"),"\n msg does not contain checked\n");
 
+
+    }
+    @Test
+    public void radio(){
+        driver.findElement(By.linkText("Radio Buttons Demo")).click();
+        driver.findElement(By.xpath("//input[@value ='Other']")).click();
+        driver.findElement(By.xpath("//input[@value ='5 - 15']")).click();
+        driver.findElement(By.xpath("//button[text()='Get values']")).click();
+        String actualGender = driver.findElement(By.cssSelector(".genderbutton")).getText();
+        String actualAge = driver.findElement(By.cssSelector(".groupradiobutton")).getText();
+        Assert.assertEquals(actualGender,"male ","\n not correct gender");
+        Assert.assertTrue(actualAge.contains("10"),"\n not correct out of range");
 
     }
 }
