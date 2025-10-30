@@ -5,8 +5,10 @@ import org.testng.Assert;
 import org.testng.AssertJUnit;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 public class Radio_button {
+    SoftAssert s = new SoftAssert();
     WebDriver driver;
     @BeforeMethod
     public void setup(){
@@ -37,8 +39,8 @@ public class Radio_button {
         driver.findElement(By.xpath("//button[text()='Get values']")).click();
         String actualGender = driver.findElement(By.cssSelector(".genderbutton")).getText();
         String actualAge = driver.findElement(By.cssSelector(".groupradiobutton")).getText();
-        Assert.assertEquals(actualGender,"male ","\n not correct gender");
-        Assert.assertTrue(actualAge.contains("10"),"\n not correct out of range");
+        s.assertEquals(actualGender,"male ","\n not correct gender");
+        s.assertTrue(actualAge.contains("10"),"\n not correct out of range");
 
     }
 }
