@@ -41,6 +41,7 @@ public class Radio_button {
         String actualAge = driver.findElement(By.cssSelector(".groupradiobutton")).getText();
         s.assertEquals(actualGender,"male ","\n not correct gender");
         s.assertTrue(actualAge.contains("10"),"\n not correct out of range");
+        s.assertAll("\n test soft assert");
 
     }
 }

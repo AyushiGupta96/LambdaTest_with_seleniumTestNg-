@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="parameterSuite">
+    <parameter name="URL" value="https://www.lambdatest.com/selenium-playground/"/>
+    <parameter name ="task" value="download file"/>
+    <test name="pass parameter Test">
+    <parameter name="test result" value = "pass "/>
+        <classes>
+            <class name="FileDownload"/>
+        </classes>
+
+    </test>
+    <test name="fail parameter Test">
+        <parameter name="test result" value = "fail "/>
+        <classes>
+            <class name="FileDownload"/>
+        </classes>
+
+    </test>
+    <test name="skip parameter Test">
+        <parameter name="test result" value = "skip "/>
+        <classes>
+            <class name="FileDownload"/>
+        </classes>
+
+    </test>
+
+</suite>
