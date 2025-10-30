@@ -5,13 +5,13 @@
         <groups>
             <run>
                 <exclude name="regression"/>
-                <include name="smoke"/>
+               <!-- <include name="smoke"/>-->
             </run>
         </groups>>
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browser" value="edge"/>
         <classes>
             <class name="DataPickers"/>
-
+            <class name="first"/>
 
             <class name="ListBox"/>
         </classes>
