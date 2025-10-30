@@ -7,12 +7,21 @@ import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class first {
-    WebDriver driver;
+    WebDriver driver ;
     @BeforeMethod
     public void setup(){
-       WebDriverManager.edgedriver.setup();
+        // Set the path to the EdgeDriver executable
+//        String path = "E:/edgedriver_win32/driver/msedgedriver.exe";
+//        String path = "C:\\Users\\ayush\\Documents\\edgedriver_win32\\msedgedriver.exe";
+//        System.setProperty("webdriver.edge.driver", path);
+
+        // Initialize the EdgeDriver
+       // WebDriver driver = new EdgeDriver();
+
+        //WebDriverManager.edgedriver.setup();
        // WebDriver.edge.driver.setup();
-        driver = new EdgeDriver();
+        //driver = new EdgeDriver();
+        WebDriver driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.get("https://www.lambdatest.com/selenium-playground/");
         //System.out.println();
