@@ -22,6 +22,7 @@ public class DYnamicDataLoading {
     public void setup(String url){
         driver= new EdgeDriver();
         driver.manage().window().maximize();
+
         //load the AUT
         driver.get("https://www.lambdatest.com/selenium-playground/");
 
@@ -68,4 +69,17 @@ public class DYnamicDataLoading {
 
 
     }
+    @Test
+    public void implicitWait(){
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+        driver.get("https://the-internet.herokuapp.com/dynamic_loading");
+        driver.findElement(By.linkText("Example 2: Element rendered after the fact")).click();
+        driver.findElement(By.xpath("//div[@id='start']/button")).click();
+        By helloWorld = By.xpath("//div[@id='finish']/h4[text()='Hello World!']");
+        String actmsg = driver.findElement(helloWorld).getText();
+        Assert.assertEquals(actmsg,"Hello World!","incorrect msg");
+    }
 }
+
+
+
