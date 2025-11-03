@@ -18,13 +18,13 @@ import static java.util.logging.FileHandler.*;
 
 public class Form {
     WebDriver driver;
-    @Parameters({"URL"})
+    //@Parameters({"URL"})
     @BeforeMethod
     public void setup(String url){
         driver= new EdgeDriver();
         driver.manage().window().maximize();
         //load the AUT
-        driver.get(url);
+        driver.get("https://www.lambdatest.com/selenium-playground/");
 
     }
     @AfterMethod
